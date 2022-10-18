@@ -1,6 +1,5 @@
-Teste Git
+# Python 4 Everybody Specialization Course | University of Michigan
 
-teste modified
-           teste
-
-teste commit 2 para fazer mudanças		   
+In this repo is my course personal assignments
+You can find this course at courera:
+https://www.coursera.org/specializations/python?
