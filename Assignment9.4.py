@@ -12,7 +12,7 @@ fh = open(fname)
 emails = dict()
 
 for line in fh:
-    if not line.startswith("From") or line.startswith("From:"):
+    if not line.startswith("From "): #or line.startswith("From:"): this part should be "not line..." too
         continue
     else:
         email = (line.split())[1]
