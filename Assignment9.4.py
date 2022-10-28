@@ -7,5 +7,24 @@
 # After the dictionary is produced, the program reads through the
 # dictionary using a maximum loop to find the most prolific committer.
 
-name = input("Enter file: ")
-handle = open(name)
+fname = input("Enter file name: ")
+fh = open(fname)
+emails = dict()
+
+for line in fh:
+    if not line.startswith("From") or line.startswith("From:"):
+        continue
+    else:
+        email = (line.split())[1]
+        emails[email] = emails.get(email,0) + 1
+
+sent = None
+count = 0
+
+for email,times in emails.items():
+
+    if times > count:
+        sent = email
+        count = times
+
+print(sent,count)
