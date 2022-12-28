@@ -15,11 +15,11 @@ for line in fh:
         continue
     else:
         time = (line.split()[5])
-        hour = (((time)[:2]))
+        hour = ((time)[:2])
         hours[hour] = hours.get(hour,0) + 1
 
-temp = (sorted([(hour,rep) for hour,rep in hours.items()]))
-
-for hour,rep in temp:
-    print(hour,rep)
+temp = (sorted([(hour,rep) for hour,rep in hours.items()])) #this part is hard to understand that we are creating a list with tuples and +
+print(temp) # print to make sure what we are creating!
+for hour,rep  in temp:  # + here it gets more complex, since we are intering for the values inside each tuple
+    print(hour,rep )
     
