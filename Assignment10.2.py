@@ -22,4 +22,11 @@ temp = (sorted([(hour,rep) for hour,rep in hours.items()])) #this part is hard t
 print(temp) # print to make sure what we are creating!
 for hour,rep  in temp:  # + here it gets more complex, since we are intering for the values inside each tuple
     print(hour,rep )
-    
+
+
+# Can use this method below to sort the print based on the most occurring one
+
+# temp = (sorted([(rep,hour) for hour,rep in hours.items()],reverse=True))
+
+# for hour,rep in temp:
+    # print(rep,hour)
