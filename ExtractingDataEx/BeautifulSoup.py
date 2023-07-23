@@ -17,4 +17,7 @@ tags = soup('a') #getting the anchors of the HTML and returning a list with the 
 #this typo its called tag.
 for tag in tags:
     #print(type(tag))
-    print(tag.get('href',None))
+    print('TAG:', tag)
+    print('URL:', tag.get('href', None))
+    print('Contents:', tag.contents[0])
+    print('Attrs:', tag.attrs)
