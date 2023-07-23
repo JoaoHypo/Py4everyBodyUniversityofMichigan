@@ -16,6 +16,11 @@ data = '''<stuff>
 tree = ET.fromstring(data)
 
 lst = tree.findall('users/user')
+#give me all the users inside users branch
+
+print(lst)
+print()
+
 print("User count:", len(lst))
 print()
 for i in lst:
