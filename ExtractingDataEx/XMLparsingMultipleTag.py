@@ -16,7 +16,7 @@ data = '''<stuff>
 tree = ET.fromstring(data)
 
 lst = tree.findall('users/user')
-#give me all the users inside users branch
+#give me all the users inside users branch and append them into a list
 
 print(lst)
 print()
