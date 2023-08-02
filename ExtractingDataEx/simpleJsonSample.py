@@ -11,7 +11,7 @@ data = '''{
     }
 }'''
 
-info = json.loads(data)
+info = json.loads(data) #parsing
 print(info)
 print(type(info))
 print("--------------------------------------------")
