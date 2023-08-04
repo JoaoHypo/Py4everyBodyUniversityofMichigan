@@ -34,21 +34,26 @@ while True:
 
     print('Retrieving', url)
     uh = urllib.request.urlopen(url, context=ctx)
-    data = uh.read().decode()
+    data = uh.read().decode() #utf-8 outside to string inside
     print('Retrieved', len(data), 'characters')
 
     try:
-        js = json.loads(data)
+        js = json.loads(data) # Trying to check for json into the string structure, if found, returning a py dict
     except:
         js = None
 
-    if not js or 'status' not in js or js['status'] != 'OK':
+
+#checking if json to dict worked, and also if worked with the json conversion to dict, 
+# if it's in the way we want, with Status key and value OK
+    if not js or 'status' not in js or js['status'] != 'OK': 
         print('==== Failure To Retrieve ====')
         print(data)
         continue
 
-    print(json.dumps(js, indent=4))
+    print(json.dumps(js, indent=4)) # Prints the hole json requested
 
+
+    # Prints out specific json tree chosen data, or better saying, the objects and their hierarchical objects too.
     lat = js['results'][0]['geometry']['location']['lat']
     lng = js['results'][0]['geometry']['location']['lng']
     print('lat', lat, 'lng', lng)
