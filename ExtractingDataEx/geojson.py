@@ -27,6 +27,11 @@ while True:
     if api_key is not False: parms['key'] = api_key
     url = serviceurl + urllib.parse.urlencode(parms)
 
+    #test
+    print("\nTest")
+    print(urllib.parse.parse_qs(url))
+    print("\n-----------------------------------")
+
     print('Retrieving', url)
     uh = urllib.request.urlopen(url, context=ctx)
     data = uh.read().decode()
